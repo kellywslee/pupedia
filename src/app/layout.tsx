@@ -4,9 +4,6 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import './globals.css';
 
-// const inter = Inter({ subsets: ['latin'] });
-// const figtree = Figtree({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
   title: 'Pupedia',
   description:

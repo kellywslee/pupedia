@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { Figtree } from 'next/font/google';
-
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 import './globals.css';
 
 // const inter = Inter({ subsets: ['latin'] });
-const figtree = Figtree({ subsets: ['latin'] });
+// const figtree = Figtree({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Pupedia',
@@ -20,11 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={figtree.className}>
+      <body className="min-h-dvh flex flex-col">
         <header className="flex items-center justify-between py-2 px-3">
           <Nav />
         </header>
         {children}
+        <Footer />
       </body>
     </html>
   );

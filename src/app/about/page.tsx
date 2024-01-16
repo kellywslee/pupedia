@@ -1,3 +1,7 @@
 export default function AboutPage() {
-  return <div>About Page</div>;
+  return (
+    <main className="pt-24 grow flex flex-col justify-center items-center">
+      About Page
+    </main>
+  );
 }

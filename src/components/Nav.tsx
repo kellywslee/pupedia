@@ -6,12 +6,6 @@ import { useState, useRef, useEffect } from 'react';
 import Hamburger from 'hamburger-react';
 import logo from '../../public/images/1.png';
 
-// const navLinks = [
-//   { id: 1, name: 'Home', path: '/' },
-//   { id: 2, name: 'About', path: '/about' },
-//   { id: 3, name: 'Contact Dev', path: '/contact' },
-// ];
-
 export default function Nav() {
   const [isHambugerOpen, setHamburgerOpen] = useState(false);
   const hamburgerRef = useRef(null);
@@ -36,32 +30,25 @@ export default function Nav() {
   }, []);
 
   return (
-    <nav>
+    <nav className="lg:center lg:center fixed left-0 right-0 top-0 z-50 flex justify-end bg-sky-200 lg:h-20 lg:justify-center">
       <div
         ref={dropdownRef}
         className={`${
           isHambugerOpen
-            ? 'absolute right-0 top-full z-50 flex h-dvh w-full flex-col items-center justify-center gap-y-6 bg-slate-50 pb-12'
+            ? 'absolute right-0 top-full z-50 flex h-dvh w-full flex-col items-center justify-center gap-y-6 bg-neutral-50 pb-12'
             : 'hidden lg:flex lg:w-11/12 lg:max-w-7xl lg:items-center lg:justify-between lg:gap-x-6'
         }`}
       >
-        {/* <ul className="flex w-full flex-col items-center gap-x-6 gap-y-6 lg:flex-row">
-          {navLinks.map((link) => (
-            <li
-              key={link.id}
-              className="text-sm transition-all duration-300 ease-in-out hover:font-bold"
-              onClick={closeMenu}
-            >
-              <Link href={link.path}>{link.name}</Link>
-            </li>
-          ))}
-        </ul> */}
         <Link href="/">
-          <Image src={logo} alt="pupeida logo" width={200} />
+          <Image src={logo} alt="pupeida logo" width={150} />
         </Link>
-        <div>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact Dev</Link>
+        <div className="flex flex-col gap-3 items-center lg:flex-row lg:gap-5">
+          <Link href="/about" className="hover:font-bold transition-all">
+            about
+          </Link>
+          <Link href="/contact" className="hover:font-bold transition-all">
+            contact dev
+          </Link>
         </div>
       </div>
 
